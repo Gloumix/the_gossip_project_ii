@@ -1,0 +1,26 @@
+<html>
+<head>
+  <title>The Gossip Project</title>
+</head>
+<body>
+      <h4>Voici la page du potin n° <%= params[:id] %>
+      </h4>
+        <div class="card text-center">
+            <div class="card-header">
+             Auteur : <%= @gossipfind.user[:first_name] %>
+            </div>
+        <div class="card-body">
+            <h5 class="card-title">Titre : <%= @gossipfind.title %></h5>
+            <p class="card-text">Potin : <%= @gossipfind.content %></p>
+            <% if @gossipfind.user == current_user %>
+              <%= link_to "Lien vers l'utilisateur", user_path(@gossipfind.user[:id]), :class => "btn btn-secondary"%>
+              <%= link_to "Editer", edit_gossip_path , :class => "btn btn-success"%>
+              <a href="<%= gossip_path %>" class="btn btn-danger" data-method="DELETE">Supprimer</a>
+            <%end%>
+        </div>
+        <div class="card-footer text-muted">
+        Créé le : <%= @gossipfind.created_at %>
+        </div>
+        </div>
+</body>
+</html>
