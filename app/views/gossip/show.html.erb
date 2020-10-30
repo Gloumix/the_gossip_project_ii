@@ -12,8 +12,8 @@
         <div class="card-body">
             <h5 class="card-title">Titre : <%= @gossipfind.title %></h5>
             <p class="card-text">Potin : <%= @gossipfind.content %></p>
-            <% if @gossipfind.user == current_user %>
               <%= link_to "Lien vers l'utilisateur", user_path(@gossipfind.user[:id]), :class => "btn btn-secondary"%>
+            <% if @gossipfind.user == current_user %>
               <%= link_to "Editer", edit_gossip_path , :class => "btn btn-success"%>
               <a href="<%= gossip_path %>" class="btn btn-danger" data-method="DELETE">Supprimer</a>
             <%end%>

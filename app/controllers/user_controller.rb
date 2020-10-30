@@ -8,7 +8,6 @@ class UserController < ApplicationController
 
   def new
     @user = User.new
-    @city = City.new
   end
 
   def create
